@@ -3,5 +3,5 @@ export const POST = async request => {
     console.log(data)
     const {object: {utms} = {}} = data
     console.log(utms)
-    return Response.json(utms)
+    return Response.json({vars: Object.entries(utms).map(([n, v]) => ({n, v}))})
 }
